@@ -1,0 +1,2 @@
+const e=["/YOUR-REPOSITORY-NAME/","/YOUR-REPOSITORY-NAME /index.html","/YOUR-REPOSITORY-NAME /style.css","/YOUR-REPOSITORY-NAME /app.js","/YOUR-REPOSITORY-NAME /manifest.json","/YOUR-REPOSITORY-NAME /icons/icon-128.png","/YOUR-REPOSITORY-NAME /icons/icon-512.png"];self.addEventListener("install",O=>{O.waitUntil(caches.open("to-do-pwa-cache-v1").then(O=>O.addAll(e)))}),self.addEventListener("fetch",e=>{e.respondWith(caches.match(e.request).then(O=>O||fetch(e.request)))});
+//# sourceMappingURL=service-worker.db852da5.js.map
