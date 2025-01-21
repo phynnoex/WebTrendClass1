@@ -1,12 +1,12 @@
 const CACHE_NAME = "to-do-pwa-cache-v1";
 const FILES_TO_CACHE = [
-  "/WebTrendClass1/", // Root path (adjust based on your repo name)
-  "/WebTrendClass1/index.html", // HTML file
-  "/WebTrendClass1/style.css", // CSS file
-  "/WebTrendClass1/app.js", // JS file
-  "/WebTrendClass1/manifest.json", // Manifest file
-  "/WebTrendClass1/icons/icon-128.png", // Icon 128px
-  "/WebTrendClass1/icons/icon-512.png", // Icon 512px
+  "/WebTrendClass1/",  // Replace with your repository name
+  "/WebTrendClass1/index.html",  // Replace with your repository name
+  "/WebTrendClass1/style.css",  // Replace with your repository name
+  "/WebTrendClass1/app.js",  // Replace with your repository name
+  "/WebTrendClass1/manifest.json",  // Replace with your repository name
+  "/WebTrendClass1/icons/icon-128.png",  // Replace with your repository name
+  "/WebTrendClass1/icons/icon-512.png",  // Replace with your repository name
 ];
 
 self.addEventListener("install", (event) => {
