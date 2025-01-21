@@ -87,7 +87,7 @@ const sw = new URL("service-worker.js", import.meta.url);
 if ("serviceWorker" in navigator) {
   const s = navigator.serviceWorker;
   s.register(sw.href, {
-    scope: "/YOUR_REPOSITORY_NAME_HERE/",
+    scope: "/WebTrendClass1/",
   })
     .then((_) =>
       console.log(

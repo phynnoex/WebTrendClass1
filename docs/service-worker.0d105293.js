@@ -1,0 +1,2 @@
+const e=["/WebTrendClass1/","/WebTrendClass1/index.html","/WebTrendClass1/style.css","/WebTrendClass1/app.js","/WebTrendClass1/manifest.json","/WebTrendClass1/icons/icon-128.png","/WebTrendClass1/icons/icon-512.png"];self.addEventListener("install",s=>{s.waitUntil(caches.open("to-do-pwa-cache-v1").then(s=>s.addAll(e)))}),self.addEventListener("fetch",e=>{e.respondWith(caches.match(e.request).then(s=>s||fetch(e.request)))});
+//# sourceMappingURL=service-worker.0d105293.js.map
