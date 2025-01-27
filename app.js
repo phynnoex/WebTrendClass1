@@ -84,18 +84,22 @@ taskList.addEventListener("click", (e) => {
 });
 
 const sw = new URL("service-worker.js", import.meta.url);
+
 if ("serviceWorker" in navigator) {
-  const s = navigator.serviceWorker;
-  s.register(sw.href, {
-    scope: "/WebTrendClass1/",
-  })
-    .then((_) =>
+  navigator.serviceWorker
+    .register(sw.href, {
+      scope: "/WebTrendClass1/",
+    })
+    .then((registration) =>
       console.log(
         "Service Worker Registered for scope:",
-        sw.href,
-        "with",
-        import.meta.url
+        registration.scope,
+        "Script URL:",
+        sw.href
       )
     )
     .catch((err) => console.error("Service Worker Error:", err));
+} else {
+  console.warn("Service Workers are not supported in this browser.");
 }
+
