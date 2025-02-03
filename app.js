@@ -12,8 +12,6 @@ import {
   collection,
 } from "firebase/firestore";
 
-
-
 const firebaseConfig = {
   apiKey: "AIzaSyAdxj1J4Gvq8dqx1qFFcj1PNUAwEh_GAl0",
   authDomain: "webtrendclass1.firebaseapp.com",
@@ -49,9 +47,9 @@ async function getTasksFromFirestore() {
 }
 
 function sanitizeInput(input) {
-    const div = document.createElement("div");
-    div.textContent = input;
-    return div.innerHTML;
+  const div = document.createElement("div");
+  div.textContent = input;
+  return div.innerHTML;
 }
 
 // Add Task
@@ -98,4 +96,18 @@ if ("serviceWorker" in navigator) {
       )
     )
     .catch((err) => console.error("Service Worker Error:", err));
+}
+
+import { GoogleGenerativeAI } from "@google/generative-ai";
+
+//Call in the event listener for page load
+async function getApiKey() {
+  let snapshot = await getDoc(doc(db, "api key", "googlegenai"));
+  apiKey = snapshot.data().key;
+  genAI = new GoogleGenerativeAI(apiKey);
+  model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+}
+
+async function askChatBot(request) {
+  return await model.generateContent(request);
 }
